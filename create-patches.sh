@@ -37,7 +37,7 @@ for rev in $(git rev-list --topo-order --reverse "$1"..lua-gumbo/master -- "$REM
 	b delete
 }
 : ok
-s,^(--- a|\+\+\+ b)/$LOCAL_PATH/(.*)$,--- \1/$REMOTE_PATH/\2,
+s,^(--- a|\+\+\+ b)/$REMOTE_PATH/(.*)$,\1/$LOCAL_PATH/\2,
 EOF
 	) "$path"
 	echo "$path"
